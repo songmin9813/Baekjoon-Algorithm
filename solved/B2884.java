@@ -13,5 +13,6 @@ public class B2884 {
 		}
 		else y-=45;
 		System.out.println(x+" "+y);
+		input.close();
 	}
 }

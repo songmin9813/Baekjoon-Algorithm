@@ -8,5 +8,6 @@ public class B2753 {
 		if(((x%4==0)&&(x%100!=0))||x%400==0)
 			System.out.println("1");
 		else System.out.println("0");
+		input.close();
 	}
 }

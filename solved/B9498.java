@@ -10,5 +10,6 @@ public class B9498 {
 		else if(x>=70) System.out.println("C");
 		else if(x>=60) System.out.println("D");
 		else System.out.println("F");
+		input.close();
 	}
 }

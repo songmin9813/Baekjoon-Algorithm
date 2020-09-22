@@ -9,5 +9,6 @@ public class B10871 {
 			tmp=input.nextInt();
 			if(tmp<x) System.out.print(tmp+" ");
 		}
+		input.close();
 	}
 }

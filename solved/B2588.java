@@ -7,11 +7,13 @@ public class B2588 {
 		int y;
 		x=input.nextInt();
 		y=input.nextInt();
+		int sum=x*y;
 		System.out.println(x*(y%10));
 		y/=10;
 		System.out.println(x*(y%10));
 		y/=10;
 		System.out.println(x*(y%10));
+		System.out.println(sum);
+		input.close();
 	}
-
 }

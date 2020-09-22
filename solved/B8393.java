@@ -9,5 +9,6 @@ public class B8393 {
 		for(int i=1;i<=x;i++)
 			sum+=i;
 		System.out.print(sum);
+		input.close();
 	}
 }

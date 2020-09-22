@@ -1,7 +1,6 @@
 import java.io.*;
 public class B2438 {
 	public static void main(String[] args) {
-		int sum;
 		try {
 			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter output=new BufferedWriter(new OutputStreamWriter(System.out));

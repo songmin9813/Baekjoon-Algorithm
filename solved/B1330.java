@@ -9,6 +9,6 @@ public class B1330 {
 		if(x>y) System.out.println(">");
 		else if(x<y) System.out.println("<");
 		else System.out.println("==");
+		input.close();
 	}
-
 }

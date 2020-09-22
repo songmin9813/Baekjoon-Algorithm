@@ -9,5 +9,6 @@ public class B10950 {
 			z=input.nextInt();
 			System.out.println(y+z);
 		}
+		input.close();
 	}
 }

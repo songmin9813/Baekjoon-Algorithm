@@ -7,5 +7,6 @@ public class B1000 {
 		x=input.nextInt();
 		y=input.nextInt();
 		System.out.println(x+y);
+		input.close();
 	}
 }

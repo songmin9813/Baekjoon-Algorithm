@@ -8,5 +8,6 @@ public class B1008 {
 		y=input.nextInt();
 		double sum=x/y;
 		System.out.println(sum);
+		input.close();
 	}
 }

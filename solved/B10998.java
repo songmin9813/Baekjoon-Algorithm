@@ -8,6 +8,7 @@ public class B10998 {
 		x=input.nextInt();
 		y=input.nextInt();
 		System.out.println(x*y);
+		input.close();
 	}
 
 }

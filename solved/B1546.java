@@ -1,7 +1,7 @@
 import java.io.*;
 public class B1546 {
 	public static void main(String[] args) {
-		float max,avg;
+		float max;
 		float sum=0;
 		try {
 			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));

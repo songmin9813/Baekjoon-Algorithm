@@ -11,5 +11,6 @@ public class B10869 {
 		System.out.println(x*y);
 		System.out.println(x/y);
 		System.out.println(x%y);
+		input.close();
 	}
 }
