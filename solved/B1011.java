@@ -5,24 +5,20 @@ public class B1011 {
 			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter output=new BufferedWriter(new OutputStreamWriter(System.out));
 			int t=Integer.parseInt(input.readLine());
-			int x,count,sum;
+			String[] s;
+			int x,left,right=1;
 			for(int i=0;i<t;i++) {
-				String[] s=input.readLine().split(" ");
+				s=input.readLine().split(" ");
 				x=Integer.valueOf(s[1])-Integer.valueOf(s[0]);
-				if(x==1) {
-					output.write("1\n");break;
+				int temp=(int)(Math.sqrt((double)x)+0.5);
+				if(temp*temp==x) {
+					output.write(String.valueOf(temp*2-1)+"\n");continue;
 				}
-				count=1;
-				sum=0;
-				while(true) {
-					sum+=count;
-					if(sum*2-count<=x&&x<sum*2+count+1) {
-						if(sum*2==x)output.write(String.valueOf(count*2)+"\n");
-						else output.write(String.valueOf(count*2+1)+"\n");
-						break;
-					}
-					count++;
-				}
+				left=(int)(Math.sqrt((double)x));
+				right=left+1;
+				if(left*left<x&&x<=((right*right)-(left*left))/2+(left*left))
+					output.write(String.valueOf(2*left)+"\n");
+				else output.write(String.valueOf(2*left+1)+"\n");
 			}
 			output.flush();
 			output.close();
