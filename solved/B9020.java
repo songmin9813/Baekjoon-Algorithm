@@ -1,5 +1,5 @@
 import java.io.*;
-public class Main {
+public class B9020 {
 	public static void main(String[] args) {
 		try {
 			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
