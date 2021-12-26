@@ -1,3 +1,4 @@
+import sys
 def dfs(list_,stack,visited):
     while len(stack)!=0:
         node=stack.pop()
@@ -5,7 +6,6 @@ def dfs(list_,stack,visited):
             if not visited[value]:
                 visited[value]=True
                 stack.append(value)
-import sys
 n,m=map(int, sys.stdin.readline().split())
 list_=[[]for _ in range(n+1)]
 visited=[False for _ in range(n+1)]
