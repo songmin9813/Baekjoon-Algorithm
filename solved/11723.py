@@ -18,4 +18,3 @@ for _ in range(n):
         binary=0b11111111111111111111
     else:
         binary=0b0
-    showing=bin(binary)
