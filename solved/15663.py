@@ -1,5 +1,4 @@
 import sys
-from unittest import result
 def backtracking(length, visited, list_):
     if length==m:
         string=''
