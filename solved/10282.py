@@ -1,6 +1,3 @@
-from pytest import importorskip
-
-
 import sys
 import heapq
 def dijk(start):
