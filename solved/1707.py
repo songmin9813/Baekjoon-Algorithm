@@ -3,7 +3,8 @@ from collections import deque
 def bfs():
     visited={i:0 for i in range(1,v+1)}
     queue=deque()
-    for i in range(1,v+1):
+    for i in range(1,v+1):#비연결 그래프인 경우 모든 노드에 대해서 검사하여야 함
+        #연결 그래프임이 보장된다면 위의 for문은 스킵 가능
         queue.append(i)
         while queue:
             cv=queue.popleft()
