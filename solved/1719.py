@@ -14,7 +14,8 @@ def dijk(start):
             if dist[ny]>newdist:
                 dist[ny]=newdist
                 heapq.heappush(queue,[newdist,ny])
-                if cx==start:
+                if cx==start:#초기 상태에서 전이된다는 특성을 가짐
+                    #첫 번째 가지노드에 한하여 노드가 반복되는 걸 왜이리 늦게 알았을까
                     firstR[ny]=ny
                 else:
                     firstR[ny]=firstR[cx]
