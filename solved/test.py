@@ -1,19 +1,54 @@
-puzzles=[['1','2','3'],['4',' ','5'],['7','8','6']]#퍼즐이 4방향 탐색이 필요한 경우
-#2차원 배열로도 개쩌는 방향 탐색 코딩을 할 수 있다.
-#인국쉑은 1차원 배열로 미친 코딩하던데 꼴보기 싫어서 난 원래 하던대로 함
-n,m=3,3#n행 m열 기준임
-start=[0,0]#처음 시작은 0행 0열
+import sys
 
-
-#이 아래부터가 중요함
-
-dx=[-1,1,0,0]
-dy=[0,0,-1,1]
-#4방향 탐색을 위한 각 dx dy 설정.
-#dx dy에 따라 up,down,left,right 순으로 움직이겠네
-
-for i in range(4):#4방향이니까
-    newX=start[0]+dx[i]#start 좌표 기준으로 dx에서 하나씩 꺼내옴
-    newY=start[1]+dy[i]#dy에서 하나씩 꺼내옴
-    if 0<=newX<n and 0<=newY<m:#행과 열값 안에 있음을 보장해야 함
-        print('새로운 좌표가 안에 들어왔네요 >_<')
+def nums_to_korean(n):
+    nums_dict=["","일","이","삼","사","오","육","칠","팔","구"]
+    nums_unit=[["","만","억"],"십","백","천"]
+    #사전 정보 생성
+    stack_one=list(n)
+    stack_two,count=[],0
+    unit_nums=[]
+    while stack_one:
+        stack_two.append(stack_one.pop())
+        count+=1
+        if count==4:
+            stack_two.reverse()
+            unit_nums.append(stack_two.copy())
+            stack_two.clear()
+            count=0
+    if stack_two:
+        stack_two.reverse()
+        unit_nums.append(stack_two.copy())
+    unit_nums.reverse()
+    for i1,list_unit in enumerate(unit_nums):
+        for i2,number in enumerate(list_unit):
+            x=nums_dict[int(number)]
+            unit_index=len(list_unit)-1-i2
+            if unit_index==0:
+                if int("".join(list_unit))!=0:
+                    y=nums_unit[0][len(unit_nums)-1-i1]
+                else:
+                    y=""
+            else:
+                if x!="":
+                    y=nums_unit[unit_index]
+                else:
+                    y=""
+            print("{}: {}{}".format(number,x,y))
+    #여기까지 분할 구현부
+    stack_one=list(n)
+    stack_two,count=[],0
+    while stack_one:
+        stack_two.append(stack_one.pop())
+        count+=1
+        if count==3:
+            stack_two.append(',')
+            count=0
+    if stack_two[-1]==",":
+        stack_two.pop()
+    stack_two.reverse()
+    result="".join(stack_two)
+    #여기까지 삼분할 result 구현문
+    return result
+print("금액을 숫자로 입력: ",end="")
+n=sys.stdin.readline().rstrip()
+print(nums_to_korean(n))
